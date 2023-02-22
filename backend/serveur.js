@@ -1,0 +1,8 @@
+const express=require("express")
+const connectdb = require("./config/connectdb")
+const todorouter = require("./router/todorouter")
+const app=express()
+app.use(express.json())
+app.use("/api/todo",todorouter)
+app.listen(4100,console.log("serveur connecte"))
+connectdb()
